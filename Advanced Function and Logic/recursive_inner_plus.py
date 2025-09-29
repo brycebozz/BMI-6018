@@ -1,10 +1,14 @@
-input_list = [1,2,3,4,[5,6,7,[8,9]]]
-def innermost_list(innermost):
+input_list = [[[9,8],7,6,5],4,3,2,1]
+def innermost_list(innermost): #innermost_list finds innermost list where as innermost argument is used to find the innermost list.
+    new_list = []
     for x in innermost: #creats the loop
         if type(x) == list:# checks to see if the type of the item is a list
-            return innermost_list(x) #makes the item the new list if it was a list
-        else:
-            continue
-    return innermost
+            return innermost_list(x) #returns back to the beginning thus making it recursive and it replaces the previous list with a new one since the new argument is x.
+
+    for item in innermost:
+        new_list.append(item+1)
+    return new_list
+
+
 
 
