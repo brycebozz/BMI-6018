@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #%% the humble print statement
+#Questions are above inbetween questions which are commented I made comments showing where the answers are made and made sure functions arent part of comments.
 '''
 1.a
 Using the print() function only, get the wrong_add_function to print out where
@@ -10,11 +11,9 @@ via f-strings: ie "The correct answer is supposed to be: [...]".
 1.b
 Then, changing as little as possible, modify the function, using the same 
 general structure to output the correct answer. Call this new function 
-correct_add_function() 
-'''
+correct_add_function()
 
 def wrong_add_function(arg1,arg2):
-   '''
    The function takes in two lists of integers, then it adds
    all of arg2 to each item of arg1.
    
@@ -38,11 +37,17 @@ def wrong_add_function(arg1,arg2):
       arg2 added to it.
 
    '''
+
+#PROBLEM 1
+
+
+
    arg1_index=0
    while arg1_index < len(arg1):
       arg_2_sum = 0
       for arg2_elements in arg2:
          arg_2_sum = sum([arg1[arg1_index]+i for i in arg2])
+#Problem 1A
       print(f'the nested loop whe creating: {arg_2_sum} when it should be making: {arg1[arg1_index]+arg2[arg1_index]}')
       arg1[arg1_index]=arg_2_sum
       arg1_index+=1
@@ -51,7 +56,8 @@ def wrong_add_function(arg1,arg2):
 arg1 = [1,2,3]
 arg2 = [1,1,1]
 
-wrong_add_function(arg1, arg2)
+#wrong_add_function(arg1, arg2)
+#commented the call above so it wouldn't change the values of arg1 and arg2 to the incorrect values.
 
 #1b
 def correct_add_function(arg1,arg2):
@@ -63,6 +69,10 @@ def correct_add_function(arg1,arg2):
         arg1[arg1_index] = arg_2_sum
         arg1_index += 1
     return arg1
+print(correct_add_function(arg1,arg2))
+
+
+
 #%% try, except
 '''
 2.a
@@ -140,7 +150,7 @@ def wrong_add_function(arg1,arg2):
 arg_str_1=['1','2','3']
 arg_str_2=['1','1', 1]
 
-#print(wrong_add_function(arg_str_1,arg_str_2))
+#wrong_add_function(arg_str_1,arg_str_2) commented so it wouldn't impact original code
 
 #Problem 2b
 def exception_add_function(arg1, arg2):
@@ -169,3 +179,8 @@ def correction_add_function(arg1, arg2):
         arg1_str = [str(x) for x in arg1] #This creates a new list using values in arg1 and changes all values to a string.
         arg2_str = [str(x) for x in arg2] #This creates a new list using values in arg2 and changes all values to a string.
         return wrong_add_function(arg1_str, arg2_str)
+
+
+
+
+#Questions are above inbetween questions which are commented I made comments showing where the answers are made and made sure functions arent part of comments.
