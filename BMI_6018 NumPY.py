@@ -5,7 +5,6 @@ print(np.__version__)
 problem_2 = np.array([0,1,2,3,4,5,6,7,8,9])
 print(problem_2)
 
-import csv
 
 problem_3 = np.genfromtxt('bmi_6018numpy data.csv', delimiter=',', dtype=None) #put the data needed into git hub as bmi_6018 numpy data.csv converted website to csv with chrome's simple scraper extension.
 fourth_column = np.array([column[3] for column in problem_3])
