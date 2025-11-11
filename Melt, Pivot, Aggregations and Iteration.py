@@ -1,9 +1,6 @@
 import pandas as pd
-#
-#
 
-
- #imported data swt using link below
+#imported data set using link below
 cols =['sepal length','sepal width','petal length','petal width','class']
 df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', names=cols)
 print(df)
@@ -15,6 +12,6 @@ print(group_df)
 #heres the pivot code
 pivot_df = df.pivot_table(index='class',  values=['sepal length','sepal width','petal length', 'petal width'], aggfunc='mean') #have to use pivot_table because can't have an index with multiple entries so i did a pivot with an aggregate that found the mean
 print(pivot_df)
-#heres the iterrable code
+#heres the iteration code
 for row_index,row in df.iterrows():
    print(row_index,row)
