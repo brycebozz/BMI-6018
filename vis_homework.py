@@ -41,7 +41,7 @@ date_columns = covid_df.columns[11:]
 utah_counties = covid_df[covid_df['Province_State'] == 'Utah'] #This will be made so only utah counties are found
  #I went through each of the columns until I found counties since counties wasnt labeled. This also gives me a list of all the counties
 special_county = utah_counties[utah_counties['Admin2'] == 'Salt Lake'] #Chose Salt Lake since it's my home county
-dates = pd.to_datetime(date_columns, format = '%m/%d/%y') #conveerts it to date time data
+dates = pd.to_datetime(date_columns, format = '%m/%d/%y') #converts it to date time data
 plt.figure(figsize = (12, 8))
 plt.plot(dates, utah_counties[date_columns].T, color = 'lightgrey', linewidth = 1) #got the too many dimensions error looked it up and found out i could use .T which would flip it solving the issue.
 plt.plot(dates, special_county[date_columns].T, color = 'blue', linewidth = 1, label = 'Salt Lake')
@@ -99,7 +99,7 @@ fig, ax1 = plt.subplots()
 ax1.set_xlabel('Date')
 ax1.set_ylabel('Total Cases', color='blue')
 ax1.plot(dates, special_county[date_columns].T, color = 'blue', linewidth = 1, label= 'Total Cases')
-ax2 = ax1.twinx()  # instantiate a second Axes that shares the same x-axis
+ax2 = ax1.twinx()
 color = 'tab:red'
 ax2.set_ylabel('Daily Cases', color=color)
 ax2.plot(dates, diffplot, color = 'red', linewidth = 1, label = 'Daily cases')
@@ -126,7 +126,7 @@ ax.set_ylabel('Total Cases')
 bottom = np.zeros(1)
 for boolean, plot in zip(counties, final_total): #zip stiches two things together so it assigns each county name with each total number
     p = ax.bar(0, plot, label=boolean, bottom=bottom)
-    bottom += plot #every time we do a plot it adds wbere we are in current
+    bottom += plot
 
 
 ax.set_title("Final total in each Utah county")
